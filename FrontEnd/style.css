@@ -1,0 +1,1348 @@
+/* #306936
+ #dfd82b
+jaune clair #f7ee1e
+blanc #fff8f1 */
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Jost", sans-serif;
+}
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+/************titre des pages************/
+.page-titre {
+  margin: 100px 0;
+  width: 725px;
+  height: 120px;
+  background: #306936;
+  outline: 6px solid #000000;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.titre {
+  color: white;
+  font-size: 60px;
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+/*************************************CALENDRIER TOURNOIS********************************/
+/************boutons mois************/
+.choisir-mois {
+  width: 85vw;
+  height: 195px;
+  background: #306936;
+  outline: 4px solid #000000;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.calendrier-choice {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 66%;
+  width: 100%;
+  align-content: center;
+  justify-items: center;
+}
+.mois {
+  width: 90%;
+  height: 65px;
+  background: #ffffff;
+  outline: 4px solid #000000;
+  border-radius: 10px;
+  color: #000000;
+  padding: 0;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mois:hover {
+  background-color: #ffffff;
+  cursor: pointer;
+  transform: translateY(4px);
+  transform: scale(0.9);
+  letter-spacing: 0em;
+  outline: 4px solid #f7ee1e;
+}
+.mois:active {
+  background: #f7ee1e;
+  outline: 4px solid #ffffff;
+}
+/************tournois info************/
+.calendrier-box {
+  margin-top: 20px;
+  width: 85vw;
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: #d9d9d9;
+  outline: 4px solid #000000;
+  border-radius: 25px;
+}
+.calendrier-t {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.calendrier-t-date {
+  outline: 4px solid #000000;
+  border-radius: 25px 25px 0px 0px;
+  width: 65vw;
+  height: 50px;
+  background: #306936;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.calendrier-text {
+  font-family: Jost;
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-align: center;
+  color: white;
+}
+.calendrier-t-info {
+  width: 65vw;
+  height: 200px;
+  outline: 4px solid #000000;
+  border-radius: 0px 0px 25px 25px;
+  background: #d9d9d9;
+}
+
+/************boutons en bas************/
+.btnright,.btnleft,.btnmid {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 7px;   
+  transition: all 0.2s ease-in-out;
+}
+.next:hover .btnright,
+.choice:hover .btnmid,
+.previous:hover .btnleft {
+  border: solid #000000;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 7px;
+}
+.btnright{
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  margin-left: 10px;
+}
+.btnleft {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  margin-right: 20px;
+}
+.btnmid {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  margin-left: 20px;
+  margin-bottom: 3px;
+}
+.calendrier-button {
+  width: 85vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+}
+.previous {
+  grid-column: 1 / 2;
+}
+.choice {
+  grid-column: 2 / 3;
+}
+.next {
+  grid-column: 3 / 4;
+}
+.previous,
+.next,
+.choice {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  width: 250px;
+  height: 40px;
+  background: #306936;
+  outline: 3px solid #000000;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 9px #999;
+  cursor: pointer;
+}
+.previous:active,
+.next:active,
+.choice:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  transform: scale(0.9);
+}
+.previous:hover,
+.next:hover,
+.choice:hover {
+  width: 250px;
+  background-color: white;
+  color: black;
+}
+@keyframes hover-animation {
+  0% {
+    width: 175px;
+  }
+  100% {
+    width: 250px;
+  }
+}
+/*************************************CLASSEMENT ATP********************************/
+/************titre classement atp************/
+.classement-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+.classement-choice {
+  width: 80vw;
+  height: 251px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 80px 80px;
+  align-content: center;
+  justify-items: center;
+}
+.choice-div {
+  width: 80vw;
+  height: 251px;
+  background: #306936;
+  outline: 4px solid #000000;
+  border-radius: 25px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#rang {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+#pays {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+#joueur {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+}
+#points {
+  grid-column: 4 / 5;
+  grid-row: 1 / 2;
+}
+#age {
+  grid-column: 5 / 6;
+  grid-row: 1 / 2;
+}
+#photos {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+#gains {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+#taille {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+#poids {
+  grid-column: 4 / 5;
+  grid-row: 2 / 3;
+}
+#style {
+  grid-column: 5 / 6;
+  grid-row: 2 / 3;
+}
+#reset {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+}
+#age,
+#photos,
+#gains,
+#taille,
+#poids,
+#style,
+#reset {
+  width: 12em;
+  height: 45px;
+  background: #ffffff;
+  outline: 4px solid #000000;
+  border-radius: 10px;
+  color: #000000;
+  padding: 0;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-family: Jost;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#age:hover,
+#photos:hover,
+#gains:hover,
+#taille:hover,
+#poids:hover,
+#style:hover,
+#reset:hover {
+  background-color: #ffffff;
+  cursor: pointer;
+  transform: translateY(4px);
+  transform: scale(0.9);
+  letter-spacing: 0em;
+  outline: 4px solid #f7ee1e;
+}
+#reset {
+  background: #f7ee1e;
+  outline: 4px solid #000000;
+  width: 14em;
+}
+#rang,
+#pays,
+#joueur,
+#points {
+  width: 12em;
+  height: 45px;
+  border-radius: 10px;
+  color: #000000;
+  padding: 0;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-family: Jost;
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7ee1e;
+  outline: 4px solid #ffffff;
+  transform: translateY(4px);
+  transform: scale(0.9);
+  letter-spacing: 0em;
+}
+#rang:hover,
+#pays:hover,
+#joueur:hover,
+#points:hover {
+  background-color: #ffffff;
+  cursor: pointer;
+  transform: translateY(4px);
+  transform: scale(1);
+  letter-spacing: 0.1em;
+  outline: 4px solid #000000;
+}
+.classement-actuel {
+  width: 80vw;
+  height: 82px;
+  background: #306936;
+  outline: 4px solid #000000;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+#text-actuel {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: #000000;
+}
+.div-actuel {
+  width: 1475px;
+  height: 45px;
+  background: #ffffff;
+  outline: 4px solid #000000;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+}
+/************Tableau classement************/
+.rankingTable {
+  overflow: hidden;
+  border-collapse: collapse;
+  width: auto;
+  cursor: pointer;
+  background: #d9d9d9;
+  text-align: center;
+}
+.tablo {
+  outline: 4px solid #000000;
+  border-radius: 10px;
+}
+thead th {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  color: #ffffff;
+  height: 80px;
+}
+table p {
+  margin: auto;
+}
+tbody td {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  color: #000000;
+  height: 80px;
+}
+tbody tr,
+td,
+th {
+  outline: 2px solid #000000;
+}
+.theadsmall {
+  width: 100px;
+  height: 45px;
+  background: #306936;
+  outline: 3px solid #000000;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.theadlong {
+  width: 250px;
+  height: 45px;
+  background: #306936;
+  outline: 3px solid #000000;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/************colonnes************/
+.colsmall {
+  width: 150px;
+}
+.collong {
+  width: 300px;
+}
+.styleUnactive {
+  display: none;
+}
+/************données joueurs************/
+.tbodysmall {
+  width: 100px;
+  height: 45px;
+  background: #ffffff;
+  outline: 3px solid #000000;
+  border-radius: 10px;
+}
+.tbodyimg {
+  width: 100px;
+  height: 60px;
+  background: #ffffff;
+  outline: 3px solid #000000;
+  border-radius: 10px;
+}
+.tbodylong {
+  width: 250px;
+  height: 45px;
+  background: #ffffff;
+  outline: 3px solid #000000;
+  border-radius: 10px;
+}
+.tbodysmall,
+.tbodyimg,
+.tbodylong {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/************Bouton joueur suivant************/
+.nextPlayer {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  width: 300px;
+  height: 40px;
+  background: #306936;
+  outline: 3px solid #000000;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 9px #999;
+  cursor: pointer;
+  margin-top: 25px;
+}
+.nextPlayer:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  transform: scale(0.9);
+}
+.nextPlayer:hover {
+  width: 325px;
+  background-color: white;
+  color: black;
+}
+@keyframes hover-animation {
+  0% {
+    width: 175px;
+  }
+  100% {
+    width: 300px;
+  }
+}
+/*************************************CONTACT********************************/
+
+/************Flex************/
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.trois-div {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+/************Formulaire************/
+.div-formulaire {
+  width: 30%;
+  height: 600px;
+  background-color: #d9d9d9;
+  border-radius: 25px;
+  outline: 4px solid #000000;
+  padding: 0;
+  border: none;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.textform {
+  outline: 3px solid #000000;
+  padding: 0;
+  border: none;
+  height: 40px;
+  width: 75%;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 24px;
+}
+.text {
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  height: 32px;
+  margin: 10px 0;
+}
+.message {
+  outline: 3px solid #000000;
+  padding: 0;
+  margin: 0;
+  border: none;
+  resize: none;
+  height: 160px;
+  width: 75%;
+  border-radius: 10px;
+  font-size: 24px;
+}
+.btn_envoyer {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  width: 55%;
+  height: 40px;
+  background: #306936;
+  outline: 3px solid #000000;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 9px #999;
+  cursor: pointer;
+}
+.btn_envoyer:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  transform: scale(0.9);
+}
+.btn_envoyer:hover {
+  width: 50%;
+  background-color: white;
+  color: black;
+}
+@keyframes hover-animation {
+  0% {
+    width: 45%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+.etoile {
+  margin-top: 10px;
+  height: 36px;
+  font-weight: 400;
+  font-size: 18px;
+}
+.star {
+  color: #306936;
+}
+/************Réseaux************/
+.div-reseau {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30%;
+}
+.bigdiv,
+.smalldiv {
+  outline: 4px solid #000000;
+  background-color: #d9d9d9;
+  border-radius: 25px;
+}
+.bigdiv {
+  height: 200px;
+}
+.smalldiv {
+  height: 120px;
+}
+.reseau-titre {
+  font-size: 26px;
+  margin-left: 5%;
+  font-weight: 700;
+  text-align: left;
+}
+.reseau-info {
+  font-size: 22px;
+  margin-left: 5%;
+  font-weight: 400;
+  text-align: left;
+}
+#j {
+  padding-top: 20px;
+}
+.iconmail,
+.iconphone {
+  height: 60px;
+  width: 60px;
+  margin-left: 5%;
+  margin-top: 5%;
+  margin-bottom: 10px;
+  transition: all 0.2s ease-in-out;
+}
+.iconmail:hover,
+.iconphone:hover {
+  cursor: pointer;
+  scale: 1.2;
+}
+.img-reseau {
+  margin-top: 5px;
+  width: 55%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.fb,
+.insta,
+.twitter {
+  height: 50px;
+  width: 50px;
+  transition: all 0.2s ease-in-out;
+}
+.fb:hover,
+.twitter:hover,
+.insta:hover {
+  cursor: pointer;
+  scale: 1.2;
+}
+/************Carte************/
+.div-carte {
+  width: 30%;
+  height: 600px;
+  background: #d9d9d9;
+  outline: 4px solid #000000;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#map {
+  width: 87.5%;
+  height: 60%;
+  outline: 4px solid #000000;
+  border-radius: 15px;
+  margin-top: 30px;
+}
+.city {
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  margin: 15px 0;
+}
+.adress {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.btn_emplacement {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  width: 60%;
+  height: 40px;
+  background-color: #306936;
+  outline: 3px solid #000000;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 9px #999;
+  cursor: pointer;
+}
+.btn_emplacement:hover {
+  width: 53.3%;
+  background-color: white;
+  color: black;
+}
+.btn_emplacement:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  transform: scale(0.9);
+}
+
+
+/************************CONNEXION ADMIN****************/
+.div-messagerie{
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.modal{
+  width: 600px;
+  margin-top: 25px;
+}
+.boutons{
+  height: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal{
+  outline: 3px solid black;
+  width: 350px;
+  height: 400px;
+  border-radius: 25px;
+  background-color: #d9d9d9;
+  display: none;
+}
+
+/* .btn-messagerie{
+  display: none;
+} */
+.btn-connexion, .btn-messagerie{
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  width: 250px;
+  height: 40px;
+  background-color: #ffffff;
+  background: linear-gradient(to left, #f7ee1e , #306936);
+  outline: 3px solid #000000;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 9px #999;
+  cursor: pointer;
+}
+.btn-connexion:hover, .btn-messagerie:hover {
+  width: 225px;
+  font-size: 20px;
+}
+.btn-connexion:active, .btn-messagerie:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  transform: scale(0.9);
+}
+.btn-submit{
+  margin-top: 40px;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  width: 200px;
+  height: 40px;
+  background-color: #ffffff;
+  background: linear-gradient(to right, #f7ee1e , #306936);
+  outline: 3px solid #000000;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 9px #999;
+  cursor: pointer;
+}
+.logo-form{
+  height: 75px;
+  margin-right: 15px;
+  margin-top: 15px;
+}
+.top-form{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.close{
+  cursor: pointer;
+  margin-left: 15px;
+  height: 25px
+}
+
+
+
+
+
+
+/*************************************CONSTRUCTION PAGE ACCUEIL***********************/
+.construction {
+  height: 100vh;
+  z-index: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(https://images.unsplash.com/photo-1524107881021-3c21e6c75f4c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80);
+}
+#lol {
+  margin: 0;
+}
+.cons {
+  margin-top: 275px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 70px;
+}
+.tte {
+  font-size: 100px;
+  color: white;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+/***********************************************RESPONSIVE************************/
+
+/**************TITRE de la page***************/
+@media only screen and (max-width: 1600px) {
+  .contact-titre {
+    margin: 80px 0;
+    width: 600px;
+    height: 100px;
+  }
+  .titre {
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .contact-titre {
+    margin: 60px 0;
+    width: 500px;
+    height: 80px;
+    border-radius: 20px;
+    outline: 5px solid #000000;
+  }
+  .titre {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .contact-titre {
+    margin: 50px 0;
+    width: 400px;
+    height: 70px;
+    border-radius: 18px;
+  }
+  .titre {
+    font-size: 35px;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .contact-titre {
+    margin: 40px 0;
+    width: 300px;
+    height: 55px;
+    border-radius: 15px;
+    outline: 5px solid #000000;
+  }
+  .titre {
+    font-size: 25px;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .contact-titre {
+    margin: 30px 0;
+    width: 250px;
+    height: 40px;
+    border-radius: 10px;
+    outline: 4px solid #000000;
+  }
+  .titre {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .contact-titre {
+    margin: 25px 0;
+    width: 200px;
+    height: 30px;
+    border-radius: 8px;
+    outline: 3px solid #000000;
+  }
+  .titre {
+    font-size: 15px;
+  }
+}
+/**************PAGE CONTACT***************/
+@media only screen and (max-width: 1600px) {
+  .div-formulaire,
+  .div-carte {
+    height: 500px;
+  }
+  .smalldiv {
+    height: 100px;
+  }
+  .bigdiv {
+    height: 166px;
+  }
+  .textform {
+    font-size: 21px;
+    height: 30px;
+  }
+  .message {
+    height: 100px;
+    font-size: 21px;
+  }
+  .text,
+  .city,
+  .reseau-titre {
+    font-size: 23px;
+  }
+  .reseau-info {
+    font-size: 18px;
+  }
+  #j {
+    padding-top: 10px;
+  }
+  .iconmail,
+  .iconphone {
+    height: 50px;
+    width: 50px;
+  }
+  .fb,
+  .insta,
+  .twitter {
+    height: 40px;
+    width: 40px;
+  }
+  .btn_envoyer,
+  .btn_emplacement {
+    font-size: 20px;
+    height: 35px;
+  }
+  .adress {
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+  .city {
+    margin-bottom: 10px;
+  }
+  #map {
+    margin-top: 20px;
+  }
+  .etoile {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 1250px) {
+  .div-formulaire,
+  .div-carte {
+    height: 400px;
+  }
+  .smalldiv {
+    height: 80px;
+  }
+  .bigdiv {
+    height: 133px;
+  }
+  .textform {
+    font-size: 19px;
+    height: 25px;
+  }
+  .message {
+    height: 80px;
+    font-size: 19px;
+  }
+  .text,
+  .city,
+  .reseau-titre {
+    font-size: 20px;
+  }
+  .reseau-info {
+    font-size: 16px;
+  }
+  #j {
+    padding-top: 10px;
+  }
+  .iconmail,
+  .iconphone {
+    height: 40px;
+    width: 40px;
+  }
+  .fb,
+  .insta,
+  .twitter {
+    height: 30px;
+    width: 30px;
+  }
+  .btn_envoyer,
+  .btn_emplacement {
+    font-size: 18px;
+    height: 30px;
+  }
+  .adress {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  .city {
+    margin-bottom: 5px;
+  }
+  .text {
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+  #map {
+    margin-top: 15px;
+  }
+  .etoile {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 1150px) {
+  .div-formulaire,
+  .div-carte {
+    height: 350px;
+    border-radius: 15px;
+    outline: 3px solid #000000;
+  }
+  .smalldiv {
+    height: 60px;
+    border-radius: 15px;
+    outline: 3px solid #000000;
+  }
+  .bigdiv {
+    border-radius: 15px;
+    height: 116px;
+    outline: 3px solid #000000;
+  }
+  .textform {
+    font-size: 17px;
+    height: 20px;
+    border-radius: 5px;
+  }
+  .message {
+    height: 60px;
+    font-size: 17px;
+    border-radius: 7px;
+  }
+  #map {
+    outline: 3px solid #000000;
+  }
+  .text,
+  .city,
+  .reseau-titre {
+    font-size: 18px;
+  }
+  .reseau-info {
+    font-size: 14px;
+  }
+  #j {
+    padding-top: 5px;
+  }
+  .iconmail,
+  .iconphone {
+    height: 35px;
+    width: 35px;
+  }
+  .fb,
+  .insta,
+  .twitter {
+    height: 25px;
+    width: 25px;
+  }
+  .btn_envoyer,
+  .btn_emplacement {
+    font-size: 16px;
+    height: 25px;
+    border-radius: 5px;
+    box-shadow: 0 6px #999;
+  }
+  .adress {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  .city {
+    margin-bottom: 5px;
+  }
+  .text {
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+  #map {
+    margin-top: 15px;
+  }
+  .etoile {
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .div-formulaire,
+  .div-carte {
+    height: 300px;
+  }
+  .smalldiv {
+    height: 50px;
+  }
+  .bigdiv {
+    height: 100px;
+  }
+  .textform {
+    font-size: 15px;
+    height: 15px;
+    border-radius: 3px;
+    outline: 2px solid #000000;
+  }
+  .message {
+    height: 50px;
+    font-size: 15px;
+    outline: 2px solid #000000;
+  }
+  #map {
+    outline: 3px solid #000000;
+  }
+  .text,
+  .city,
+  .reseau-titre {
+    font-size: 16px;
+  }
+  .city {
+    margin: 8px;
+  }
+  .reseau-info {
+    font-size: 12px;
+  }
+  .iconmail,
+  .iconphone {
+    height: 20px;
+    width: 20px;
+  }
+  .fb,
+  .insta,
+  .twitter {
+    height: 20px;
+    width: 20px;
+  }
+  .btn_envoyer,
+  .btn_emplacement {
+    font-size: 14px;
+    height: 20px;
+    border-radius: 4px;
+    box-shadow: 0 5px #999;
+    outline: 2px solid #000000;
+  }
+  .adress {
+    font-size: 12px;
+  }
+  .text {
+    height: auto;
+    margin-bottom: 3px;
+  }
+  #map {
+    margin-top: 13px;
+  }
+  .etoile {
+    font-size: 12px;
+  }
+  #j {
+    padding-top: 0px;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .trois-div {
+    align-items: center;
+    flex-direction: column;
+  }
+  .div-carte {
+    display: none;
+  }
+  .div-formulaire {
+    margin-bottom: 25px;
+  }
+  .bigdiv {
+    margin-bottom: 15px;
+  }
+}
+/**************PAGE CALENDRIER***************/
+@media only screen and (max-width: 1600px) {
+  .choisir-mois {
+    height: 175px;
+  }
+  .mois {
+    height: 55px;
+    font-size: 19px;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  .choisir-mois {
+    height: 155px;
+  }
+  .mois {
+    height: 50px;
+    font-size: 17px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .choisir-mois {
+    height: 135px;
+  }
+  .mois {
+    height: 45px;
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .choisir-mois {
+    height: 115px;
+    outline: 3px solid #000000;
+  }
+  .mois {
+    height: 40px;
+    font-size: 13px;
+    outline: 3px solid #000000;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .choisir-mois {
+    width: 90vw;
+    height: 105px;
+    border-radius: 15px;
+  }
+  .mois {
+    height: 35px;
+    font-size: 11px;
+    border-radius: 8px;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .choisir-mois {
+    height: 95px;
+    border-radius: 12px;
+    outline: 2px solid #000000;
+  }
+  .mois {
+    height: 35px;
+    font-size: 10px;
+    border-radius: 7px;
+    outline: 2px solid #000000;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .choisir-mois {
+    height: 75px;
+    border-radius: 10px;
+  }
+  .mois {
+    height: 25px;
+    font-size: 8px;
+    border-radius: 7px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .choisir-mois {
+    width: 95vw;
+  }
+  .mois {
+    font-size: 7px;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .choisir-mois {
+    height: 65px;
+  }
+  .mois {
+    font-size: 6px;
+    height: 20px;
+    border-radius: 5px;
+  }
+}
