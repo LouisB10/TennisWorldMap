@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Messagerie</title>
     <link rel="icon" type="image/x-icon" href="image/favicon.png">
-    <link rel="stylesheet" href="style.css?v=<?=date("H:i:s")?>">
+    <link rel="stylesheet" href=style.css ?v=<?=date("H:i:s")?>">
     <link rel="stylesheet" href="navfooter.css?v=<?=date("H:i:s")?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,9 +51,12 @@
   </nav>
   </header>
   <section class="messagerie-section">
-  <div class="page-titre">
-            <p class="titre">MESSAGERIE</p>
-        </div>
+    <div class="page-titre">
+      <p class="titre">MESSAGERIE</p>
+    </div>
+    <div>
+      <button class="btn-connexion">Se déconnecter</button>
+    </div>
   </section>
   <footer class="footer" id="lol">
   <div class="logo-bottom">
@@ -64,12 +67,13 @@
 </html>
 
 <?php
-    session_start();
+    include('./connect.php');
 
-    try {
-        $db = new PDO('mysql:host=localhost;dbname=tennisworldmap', "root", "", array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-    } catch(PDOException $e) {
-        $db = NULL;
-        echo ("Erreur: " . $e->getMessage());
+    if(empty($_SESSION["admin"])) {        
+  // Permet de détruire la session PHP courante ainsi que toutes les données rattachées
+        session_destroy();
+        header("Location: connexion.php");
     }
 ?>
+
+

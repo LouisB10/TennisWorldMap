@@ -124,22 +124,33 @@
           </div>
         </div>
         <div class="div-messagerie">
+        <div>
+            <form action="inscription.php" method="post">
+              <input type="hidden" name="form_inscription" value="1">
+              <label for="form_id" class="text">Identifiant:</label>
+              <input type="text" class="textform" name="form_id"  maxlength="10" required>
+              <label for="form_password" class="text" >Mot de passe:</label>
+              <input type="password" class="textform" name="form_password"  maxlength="10" required >
+              <input type="submit" class="btn-submit" value="S'inscrire" >
+            </form>
+          </div>
           <div class="boutons">
           <button class="btn-messagerie" onclick="window.location.href = 'message.php';">Messagerie</button>
-          <button class="btn-connexion" >Connexion Admin</button>
+          <button class="btn-connexion" >Connexion </button>
           </div>
           <div class="modal">
             <div class="top-form">
-            <img alt="" src="image/traverser.png" class="close">
-            <img alt="" src="image/logo-remove.webp" class="logo-form">
+              <img alt="" src="image/traverser.png" class="close">
+              <img alt="" src="image/logo-remove.webp" class="logo-form">
             </div>
-              <form>
-                <label for="identifiant" class="text">Identifiant:</label>
-                <input type="text" id="identifiant" name="identifiant" class="textform" maxlength="10" required><br>
-                <label for="password" class="text">Mot de passe:</label>
-                <input type="password" id="password" name="password" class="textform" maxlength="10" required><br>
-                <input type="button" value="Se connecter" class="btn-submit">
-              </form>
+            <form action="connexion.php" method="post">
+              <input type="hidden" name="form_connexion" value="1">
+              <label for="form_id" class="text">Identifiant:</label>
+              <input type="text" class="textform" name="form_id" maxlength="10" required>
+              <label for="form_password" class="text" >Mot de passe:</label>
+              <input type="password" class="textform" name="form_password"  maxlength="10" required >
+              <input type="submit" class="btn-submit" value="Se connecter" >
+            </form>
           </div>
         </div>
     </section>   
@@ -151,58 +162,32 @@
     <script src="messagerie.js"></script>
 </body>
 </html>
-
 <?php 
     $DB_NAME = "tennisworldmap";
     $DB_USER = "root";
     $DB_PASS = "";
     // Connexion à la base de données
     $bdd = new PDO('mysql:host=localhost;dbname=' . $DB_NAME, $DB_USER, $DB_PASS, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-    // Préparation de la requête SQL nous stockons dans une variable $req la requête à exécuter
+    // Préparation de la requête SQL
     if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) && isset($_POST['message'])){
         $nom = $_POST['nom'];
         $prenom = $_POST['prenom'];
         $email = $_POST['email'];
         $message = $_POST['message'];
         $date_envoi = date('Y-m-d H:i:s');
-        $insert = " INSERT INTO messages(nom, prenom, email, message, date_envoi) VALUES ('$nom','$prenom','$email','$message','$date_envoi');";
+        $insert = "INSERT INTO messages(nom, prenom, email, message, date_envoi) VALUES (:nom, :prenom, :email, :message, :date_envoi)";
         $req = $bdd->prepare($insert);
+        $req->bindParam(':nom', $nom);
+        $req->bindParam(':prenom', $prenom);
+        $req->bindParam(':email', $email);
+        $req->bindParam(':message', $message);
+        $req->bindParam(':date_envoi', $date_envoi);
         // Exécution de la requête SQL
         try {
-          $req->execute();
-          echo "Données envoyées avec succès !";
-      } catch(PDOException $e) {
-          echo "Erreur : " . $e->getMessage();
-      }
+            $req->execute();
+            echo "Données envoyées avec succès !";
+        } catch(PDOException $e) {
+            echo "Erreur : " . $e->getMessage();
+        }
     }
-?>
-
-<?php 
-    // $DB_NAME = "tennisworldmap";
-    // $DB_USER = "root";
-    // $DB_PASS = "";
-    // // Connexion à la base de données
-    // $bdd = new PDO('mysql:host=localhost;dbname=' . $DB_NAME, $DB_USER, $DB_PASS, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-    // // Préparation de la requête SQL
-    // if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) && isset($_POST['message'])){
-    //     $nom = $_POST['nom'];
-    //     $prenom = $_POST['prenom'];
-    //     $email = $_POST['email'];
-    //     $message = $_POST['message'];
-    //     $date_envoi = date('Y-m-d H:i:s');
-    //     $insert = "INSERT INTO messages(nom, prenom, email, message, date_envoi) VALUES (:nom, :prenom, :email, :message, :date_envoi)";
-    //     $req = $bdd->prepare($insert);
-    //     $req->bindParam(':nom', $nom);
-    //     $req->bindParam(':prenom', $prenom);
-    //     $req->bindParam(':email', $email);
-    //     $req->bindParam(':message', $message);
-    //     $req->bindParam(':date_envoi', $date_envoi);
-    //     // Exécution de la requête SQL
-    //     try {
-    //         $req->execute();
-    //         echo "Données envoyées avec succès !";
-    //     } catch(PDOException $e) {
-    //         echo "Erreur : " . $e->getMessage();
-    //     }
-    // }
 ?>
