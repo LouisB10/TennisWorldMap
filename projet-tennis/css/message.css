@@ -1,0 +1,142 @@
+/************************* Partie de la messagerie *************************/
+
+/* Style de la div principale contenant la messagerie */
+.messagerie-div {
+    width: 75%;
+    height: 80%;
+    background: #D9D9D9;
+    outline: 4px solid #000000;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Style de la div contenant les boîtes */
+.messagerie-boites {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style des divs contenant les icônes et les noms des boîtes */
+.messagerie-boites div {
+    display: flex;
+    align-items: center;
+}
+
+/* Style des icônes des boîtes */
+.icon-messagerie {
+    height: 50px;
+    padding-left: 25px;
+}
+
+/* Style de la div contenant les boîtes vertes */
+.boites-vertdiv {
+    width: 100%;
+    height: 100%;
+    background: #306936;
+    outline: 4px solid #000000;
+    border-radius: 25px 25px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* Style des noms de boîtes */
+.boite-choix p {
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+}
+
+/* Style des divs contenant les noms de boîtes */
+.boite-choix {
+    height: 60%;
+    width: 30%;
+    background-color: white;
+    border-radius: 20px;
+    outline: 4px solid #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+/* Style des divs contenant les noms de boîtes lors du survol de la souris */
+.boite-choix:hover {
+    background-color: #ffffff;
+    cursor: pointer;
+    transform: translateY(4px);
+    transform: scale(0.90);
+    outline: 4px solid #f7ee1e;
+}
+/************************PARTIE MESSAGE***************************/
+.messagerie-message{
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/**********partie info du message************/
+.message-vertdiv{
+    width: 100%;
+    height: 65px;
+    padding: 0px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #306936;
+    border-radius: 25px 25px 0 0;
+    outline: 4px solid #000000;
+}
+.message-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.message-info img{
+    padding-right: 10px;
+    height: 35px ;
+}
+.message-info p{
+    color: white;
+    font-size: 25px;
+}
+
+/**********partie contenu du message*********/
+.message-blancdiv{
+    width: 100%;
+    height: 40% ;
+    padding: 20px 30px 15px 30px;
+    background-color: white;
+    border-radius: 0 0 25px 25px;
+    outline: 4px solid #000000;
+}
+.message-blancdiv p{
+    font-size: 22px;
+}
+/************************PARTIE ACTIONS A DROITE DU MESSAGE***************************/
+.message-action{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.messagerie-actions{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.action-div{
+    height: 30%;
+
+}
