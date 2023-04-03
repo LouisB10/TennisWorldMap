@@ -42,7 +42,12 @@
     </script>
 </head>
 <body>
-<?php include '../includes/header.php'; ?>
+<?php
+  $isOnPage1 = false;
+  $isOnPage2 =  false;
+  $isOnPage3 = false; 
+$isOnPage4 =  true;
+ include '../includes/header.php'; ?>
     <section class="contact-section">
         <div class="page-titre">
             <p class="titre">CONTACTEZ NOUS</p>

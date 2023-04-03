@@ -46,7 +46,7 @@
 }
 
 /* Additional styles for the navbar */
-#page-actuelle {
+.page-actuelle {
   background: -webkit-linear-gradient(180deg, #306936 10%, #f7ee1e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
