@@ -17,16 +17,14 @@ if ($type_message == 1) {
 } else if ($type_message == 3) {
     $sql = "SELECT * FROM messages WHERE type_message = 3";
 }
-
+// Vérification si une demande de suppression a été envoyée
 $message_id = isset($_POST['id']) ? $_POST['id'] : null;
 
 if ($message_id !== null) {
-  // Mise à jour du type du message à 2
-  $query = $bdd->prepare('UPDATE messages SET type_message = 2 WHERE id = :id');
+  // Suppression du message avec l'id donné
+  $query = $bdd->prepare('DELETE FROM messages WHERE id = :id');
   $query->execute(array('id' => $message_id));
 }
-
-
 // Récupération des messages depuis la base de données en fonction du type sélectionné
 $req = $bdd->query($sql);
 $messages = $req->fetchAll(PDO::FETCH_ASSOC);

@@ -104,7 +104,7 @@ function afficherMessages(type_message) {
 
       btnSuppr.addEventListener('click', function() {
         const messageId = this.getAttribute('data-id');
-        const url = 'get_messages.php?type_message=2';
+        const url = 'get_messages.php';
         const data = { id: messageId };
       
         fetch(url, {
@@ -122,6 +122,8 @@ function afficherMessages(type_message) {
         })
         .then(data => {
           // Le message a été supprimé avec succès
+          // Recharger la page pour afficher les messages mis à jour
+          window.location.reload();
         })
         .catch(error => {
           console.error(error);
