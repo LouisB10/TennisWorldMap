@@ -217,7 +217,7 @@ footer {
   height: 135px;
   background-color: rgba(0, 0, 0, 1);
   display: grid;
-  grid-template-columns:1fr 1fr  1fr;
+  grid-template-columns:1fr 1fr 1fr;
   grid-template-rows: auto;
 }
 /***************FOOTER LEFT******************/

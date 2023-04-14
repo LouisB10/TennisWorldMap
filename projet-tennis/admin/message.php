@@ -48,7 +48,7 @@
               <img  src="../image/icon-msgsup.png" alt="boite corbeille icone">
            </a>
       </div>
-      <div class="telle"></div>
+      <div class="message-div"></div>
     </div>
       <?php if(!isset($_SESSION['admin'])) {
               echo '<button class="btn-connexion">Déconnexion</button>';
