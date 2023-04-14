@@ -35,15 +35,15 @@
     </div>
     <div class="messagerie-div">
       <div class="boites-vertdiv">
-          <a class="boite-choix active" id="boite-reception" href="#Boîte de réception">
+          <a class="boite-choix" id="boite-reception" >
               <p>Boîte de reception</p>
               <img  src="../image/icon-receptionnoir.png" alt="boite de reception icone">
           </a>
-          <a class="boite-choix" id="boite-archive" href="#Messages archivés">
+          <a class="boite-choix" id="boite-archive" >
               <p>Messages archivés</p>
               <img  src="../image/icon-archivenoir.png" alt="boite archive icone">
           </a>
-          <a class="boite-choix" id="boite-supprime" href="#Messages supprimés">
+          <a class="boite-choix" id="boite-supprime" >
               <p>Messages supprimés</p>
               <img  src="../image/icon-msgsup.png" alt="boite corbeille icone">
            </a>
@@ -55,6 +55,7 @@
           } ?>
     </section>
   <?php include '../includes/footer.php'; ?>
-  <script src="../js/classe.js"></script>
+  <script src="../js/message.js"></script>
+  <!-- <script src="../js/classe.js"></script> -->
 </body>
 </html>

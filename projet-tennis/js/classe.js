@@ -1,5 +1,4 @@
 /**********Changement de classe pour les boutons choix de boite ******/
-document.addEventListener("DOMContentLoaded", function () {
   let boitesChoix = document.querySelectorAll(".boite-choix");
 
   boitesChoix.forEach(function (boiteChoix) {
@@ -13,11 +12,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // ajouter la classe "active" à la boite-choix cliquée
       boiteChoix.classList.add("active");
-
-      window.location.href = this.href;
     });
   });
-});
+
 
 // Sélectionnez les boutons de la boîte de réception
 const receptionBtn = document.querySelector("#boite-reception");
@@ -99,45 +96,41 @@ function afficherMessages(type_message) {
             `;
       });
       messagesContainer.innerHTML = messagesHTML;
-
-      const btnSuppr = document.querySelector("#supprimer");
-
-      btnSuppr.addEventListener('click', function() {
-        const messageId = this.getAttribute('data-id');
-        const url = 'get_messages.php';
-        const data = { id: messageId };
-      
-        fetch(url, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        })
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Une erreur est survenue.');
-          }
-          return response.json();
-        })
-        .then(data => {
-          // Le message a été supprimé avec succès
-          // Recharger la page pour afficher les messages mis à jour
-          window.location.reload();
-        })
-        .catch(error => {
-          console.error(error);
-          // Afficher un message d'erreur
-        });
-      });
-
-
-
-
     })
     .catch((error) => {
       console.error(error);
       // Affichage d'un message d'erreur à l'utilisateur
-      messagesContainer.innerHTML = "Une erreur est survenue lors de la récupération des messages.";
+      messagesContainer.innerHTML =
+        "Une erreur est survenue lors de la récupération des messages.";
     });
 }
+const btnSuppr = document.querySelector("#supprimer");
+
+btnSuppr.addEventListener("click", function () {
+  const messageId = this.getAttribute("data-id");
+  const url = "get_messages.php";
+  const data = { id: messageId };
+
+  fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ id: messageId, type_message: 2 }),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Une erreur est survenue.");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      // Le message a été supprimé avec succès
+      // Recharger la page pour afficher les messages mis à jour
+      window.location.reload();
+    })
+    .catch((error) => {
+      console.error(error);
+      // Afficher un message d'erreur
+    });
+});
