@@ -6,14 +6,23 @@ $DB_PASS = "";
 $bdd = new PDO('mysql:host=localhost;dbname=' . $DB_NAME, $DB_USER, $DB_PASS, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
 // Vérification de l'ID du message et de l'action demandée
-if (isset($_GET['id']) && is_numeric($_GET['id']) && isset($_GET['action']) && $_GET['action'] === 'supprimer') {
+if (isset($_GET['id']) && is_numeric($_GET['id']) && isset($_GET['action'])) {
   $messageId = $_GET['id'];
   
-  // Mettre à jour le type du message à 2 (supprimé)
-  $sql = "UPDATE messages SET type_message = 3 WHERE id = :id";
-  $req = $bdd->prepare($sql);
-  $req->bindParam(':id', $messageId, PDO::PARAM_INT);
-  $req->execute();
+  if($_GET['action'] === 'supprimer') {
+    // Mettre à jour le type du message à 3 (supprimé)
+    $sql = "UPDATE messages SET type_message = 3 WHERE id = :id";
+    $req = $bdd->prepare($sql);
+    $req->bindParam(':id', $messageId, PDO::PARAM_INT);
+    $req->execute();
+  } elseif($_GET['action'] === 'archiver') {
+    
+    // Mettre à jour le type du message à 2 (archivé)
+    $sql = "UPDATE messages SET type_message = 2 WHERE id = :id";
+    $req = $bdd->prepare($sql);
+    $req->bindParam(':id', $messageId, PDO::PARAM_INT);
+    $req->execute();
+  }
 }
 
 // Récupération des messages selon leur type depuis la base de données

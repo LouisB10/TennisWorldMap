@@ -35,24 +35,21 @@
     </div>
     <div class="messagerie-div">
       <div class="boites-vertdiv">
-          <a class="boite-choix" id="boite-reception" >
+          <a class="boite-choix" id="boite-reception" onclick="afficherMessages(1) ;" >
               <p>Boîte de reception</p>
               <img  src="../image/icon-receptionnoir.png" alt="boite de reception icone">
           </a>
-          <a class="boite-choix" id="boite-archive" >
-              <p>Messages archivés</p>
+          <a class="boite-choix" id="boite-archive" onclick="afficherMessages(2);" >
+              <p>Archive</p>
               <img  src="../image/icon-archivenoir.png" alt="boite archive icone">
           </a>
-          <a class="boite-choix" id="boite-supprime" >
-              <p>Messages supprimés</p>
+          <a class="boite-choix" id="boite-supprime" onclick="afficherMessages(3);" >
+              <p>Corbeille</p>
               <img  src="../image/icon-msgsup.png" alt="boite corbeille icone">
            </a>
       </div>
-      <div class="message-div"></div>
+      <div class="message-div" data-id="1"></div>
     </div>
-      <?php if(!isset($_SESSION['admin'])) {
-              echo '<button class="btn-connexion">Déconnexion</button>';
-          } ?>
     </section>
   <?php include '../includes/footer.php'; ?>
   <script src="../js/message.js"></script>

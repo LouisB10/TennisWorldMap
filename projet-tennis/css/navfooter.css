@@ -17,7 +17,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
-  height: 181px;
+  height: 100%;
 }
 .nav-links-left {
   grid-column: 2 / 3;
@@ -42,7 +42,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
-  height: 181px;
+  height: 100%;
 }
 
 /* Additional styles for the navbar */

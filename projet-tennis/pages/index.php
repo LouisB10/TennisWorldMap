@@ -23,7 +23,8 @@
    $isOnPage1 =  true; 
    $isOnPage2 = false;
    $isOnPage3 = false;
-   $isOnPage4 = false;  include '../includes/header.php'; ?>
+   $isOnPage4 = false;  
+   include '../includes/header.php'; ?>
    <section>
    <div class="page-titre">
             <p class="titre">CARTE</p>
