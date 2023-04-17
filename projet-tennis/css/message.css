@@ -59,6 +59,10 @@
 .top-info img{
     padding-right: 10px;
     height: 35px ;
+    transition: all 0.2s ease-in-out;
+}
+.top-info img:hover{
+    transform: scale(1.1);
 }
 /*Nom-Prenom email et date*/
 .top-info p{

@@ -56,6 +56,6 @@
     </section>
   <?php include '../includes/footer.php'; ?>
   <script src="../js/message.js"></script>
-  <!-- <script src="../js/classe.js"></script> -->
+ 
 </body>
 </html>

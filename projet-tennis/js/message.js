@@ -95,6 +95,54 @@ function afficherMessages(type_message){
               `;
       });
       messagesContainer.innerHTML = messagesHTML;
+
+
+      function archiverOuSupprimerMessage(id, action) {
+        // Création de la requête AJAX
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'get_messages.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      
+        // Envoi de la requête avec les paramètres
+        xhr.send(`id=${id}&action=${action}`);
+      
+        // Réception de la réponse de la requête
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            // Traitement de la réponse ici
+            console.log(xhr.responseText);
+          }
+        }
+      }
+
+
+
+
+       // Ajout de l'événement "click" pour chaque bouton archiver
+       const btnsArchiver = document.querySelectorAll('#archiver');
+       btnsArchiver.forEach((btn) => {
+         btn.addEventListener('click', () => {
+           // Code de suppression du message
+           const messageId = btn.getAttribute('data-id');
+           console.log(`Archiver le message ${messageId}`);
+         });
+       });
+         // Ajout de l'événement "click" pour chaque bouton supprimer
+       const btnsSupprimer = document.querySelectorAll('#supprimer');
+       btnsSupprimer.forEach((btn) => {
+         btn.addEventListener('click', () => {
+           // Code de suppression du message
+           const messageId = btn.getAttribute('data-id');
+           console.log(`Supprimer le message ${messageId}`);
+         });
+       });
+
+
+
+
+
+
+       
     } else {
       messagesContainer.innerHTML =
           "Une erreur est survenue lors de la récupération des messages.";
@@ -104,35 +152,35 @@ function afficherMessages(type_message){
 }
 
 
-const btnSupprimer = document.querySelectorAll('#supprimer');
+
+
+// btnSupprimer.forEach((btn) => {
+//   btn.addEventListener('click', () => {
+//     const messageId = btn.getAttribute('data-id');
+//     console.log("Message ID:", messageId);
+//     fetch(`get_messages.php?id=${messageId}&action=supprimer`)
+//       .then((response) => {
+//         if (response.ok) {
+//           return response.json();
+//         } else {
+//           throw new Error(response.statusText);
+//         }
+//       })
+//       .then((data) => {
+//         console.log(data);
+//         // Mettre à jour la page avec les nouveaux messages
+//       })
+//       .catch((error) => {
+//         console.error(error);
+//         alert('Une erreur est survenue lors de la suppression du message.');
+//       });
+//   });
+// });
+
+
+
 // const btnRepondre = document.querySelector('#repondre');
 // const btnArchiver = document.querySelector('#archive');
-
-
-btnSupprimer.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const messageId = btn.dataset.id;
-    fetch(`get_messages.php?id=${messageId}&action=supprimer`)
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error(response.statusText);
-        }
-      })
-      .then(data => {
-        // Mettre à jour la page avec les nouveaux messages
-        console.log(data);
-      })
-      .catch(error => {
-        console.error(error);
-        alert('Une erreur est survenue lors de la suppression du message.');
-      });
-  });
-});
-
-
-
 // btnRepondre.addEventListener('click',function(){
 //   /******En cours */
 // });
