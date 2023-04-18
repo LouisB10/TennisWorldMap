@@ -14,17 +14,17 @@
  
   <div class="footer-reseaux">
     <img src="../image/icongithub.png" alt="">
-    <img src="../image/twitter.png" alt=""> 
-    <img src="../image/instagram.png" alt=""> 
-    <img src="../image/facebook.png" alt=""> 
   </div>
   <div class="footer-right">
-    
   <div class="footer-status">
     <img  class="admin-icon" src="../image/compte.png" alt="">
     <?php
      if(isset($_SESSION['admin'])) {
-      echo '<form action="../admin/deconnect.php" method="post"><button class="btn-s" type="submit"><img class="status-icon" src="../image/admin-connect" alt="Admin Connecté"></button></form>';
+      echo '<form action="../admin/deconnect.php" method="post">
+              <button class="btn-s" type="submit">
+               <img class="status-icon" src="../image/admin-connect" alt="Admin Connecté">
+              </button>
+            </form>';
     } 
       else {echo '
           <img class="status-icon" src="../image/admin-deconnect" alt="Admin déconnecté">  ';

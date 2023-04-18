@@ -55,48 +55,47 @@ $isOnPage4 =  true;
         <div class="trois-div">
           <div class="div-carte">
             <div id="map"></div>
-            <p class="city">Montpellier</p>
-            <p class="adress">4657 Rue de la Jeune Parque</p>
-            <input type="button" value="Emplacement" class="btn_emplacement" 
+            <p>Montpellier</p>
+            <p>4657 Rue de la Jeune Parque</p>
+            <input type="button" value="Emplacement" 
             onclick="window.open('https://www.google.fr/maps/place/4657+Rue+de+la+Jeune+Parque,+34070+Montpellier', '_blank');">
           </div>
           <div class="div-formulaire">
             <form action="../pages/contact.php" method="POST">
-              <label class="text">Nom</label>
-              <input type="text" name="nom" class="textform"maxlength="30" aria-label="Nom" pattern="^[a-zA-ZÀ-ÿ]+([\-'\s][a-zA-ZÀ-ÿ]+)*$">
-              <label  class="text">Prénom</label>
-              <input type="text" name="prenom" class="textform" maxlength="30" aria-label="Prénom" pattern="^[a-zA-ZÀ-ÿ]+([\-'\s][a-zA-ZÀ-ÿ]+)*$">
-              <label  class="text">Adresse e-mail<span class="star">*</span></label>
-              <input type="text" name="email" class="textform" maxlength="100" required aria-label="Adresse email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
-              <label  class="text">Message<span class="star">*</span></label>
-              <textarea name="message" class="message" maxlength="500" required aria-label="Message"></textarea>
-              <p class="etoile"><span class="star">*</span>informations obligatoires</p>
-              <input type="submit" value="Envoyer" class="btn_envoyer">
+              <label for="nom">Nom</label>
+              <input id="nom" type="text" name="nom"  maxlength="30" aria-label="Nom" aria-describedby="nom-description" pattern="^[a-zA-ZÀ-ÿ]+([\-'\s][a-zA-ZÀ-ÿ]+)*$">
+              <label for="prenom">Prénom</label>
+              <input id="prenom" type="text" name="prenom" maxlength="30" aria-label="Prénom" aria-describedby="prénom-description" pattern="^[a-zA-ZÀ-ÿ]+([\-'\s][a-zA-ZÀ-ÿ]+)*$">
+              <label for="email">Adresse e-mail<span>*</span></label>
+              <input id="email" type="text" name="email"  maxlength="100" required aria-label="Adresse email" aria-describedby="email-description" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+              <label for="message">Message<span >*</span></label>
+              <textarea id="message" name="message"  maxlength="500" required aria-label="Message" aria-describedby="message-description"></textarea>
+              <p><span>*</span>informations obligatoires</p>
+              <input type="submit" value="Envoyer" aria-label="Envoyer le formulaire">
             </form>
           </div>
-          <div class="div-reseau">
-            <div class="bigdiv">
-              <img alt="" src="../image/iconmail.svg" class="iconmail" >
-              <p class="reseau-titre">E-mail</p>
-              <p class="reseau-info">louisbousquet13@gmail.com</p> 
+          <div class="div-contact">
+            <div class="div-mail-phone">
+              <img alt="" src="../image/icon-mail.svg">
+              <p>E-mail</p>
+              <p>tennisworldmap@gmail.com</p> 
             </div>
-            <div class="bigdiv">
-              <img alt="" src="../image/iconphone.svg" class="iconphone">
-              <p class="reseau-titre">Téléphone</p>
-              <p class="reseau-info">06 09 92 26 30</p>
+            <div class="div-mail-phone">
+              <img alt="" src="../image/icon-phone.svg">
+              <p>Téléphone</p>
+              <p>06 06 07 06 06</p>
             </div>
-            <div class="smalldiv">
-              <p class="reseau-titre" id="j">Rejoignez-nous</p>
+            <div class="div-media">
+              <p>Rejoignez-moi</p>
               <div class="img-reseau">
-                <img alt="" src="../image/iconfb.svg" class="fb" onclick="window.open('https://www.facebook.com', '_blank');">
-                <img alt="" src="../image/icontwitter.svg" class="twitter" onclick="window.open('https://www.twitter.com', '_blank');">
-                <img alt="" src="../image/iconinsta.svg" class="insta" onclick="window.open('https://www.instagram.com', '_blank');">
+                <img alt="" src="../image/icon-githubblack.png" onclick="window.open('https://www.github.com', '_blank');">
               </div>
             </div>
           </div>
         </div>
         <div class="div-messagerie">
           <div class="boutons">
+          <button class="btn-connexion">Connexion</button>
           <?php if(!isset($_SESSION['admin'])) {
               echo '<button class="btn-connexion">Connexion</button>';
           } ?>

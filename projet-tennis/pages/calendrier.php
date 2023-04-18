@@ -11,6 +11,7 @@
     <title>TennisWorldMap - Calendrier</title>
     <link rel="icon" type="image/x-icon" href="../image/logo-remove.webp">
     <link rel="stylesheet" href="../css/style.css?v=<?=date("H:i:s")?>">
+    <link rel="stylesheet" href="../css/calendrier.css?v=<?=date("H:i:s")?>">
     <link rel="stylesheet" href="../css/navfooter.css?v=<?=date("H:i:s")?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
