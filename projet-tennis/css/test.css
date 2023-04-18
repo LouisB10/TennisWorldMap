@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Jost", sans-serif;
+}
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+/************************************NAV-BAR******************************/
+.nav-bar {
+    display: grid;
+    grid-template-columns: 0.75fr 0.75fr  0.75fr;
+    grid-template-rows: auto;
+    background-color: rgba(0, 0, 0, 1);
+    width: 100%;
+    height: 80px;
+    padding: 0;
+    margin: 0;
+  }
+/******************Deco gauche****************/  
+  .decoration-left {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 100%;
+  }
+  .decoration-left img{
+    width: 100%;
+  }
+  .decoration-left img:nth-of-type(1) {
+    transform: rotate(180deg);
+    }
+/******************Deco droite**************/ 
+  .decoration-right {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 100%;
+  }
+  .decoration-right img{
+    width: 100%;
+  }
+  .decoration-right img:nth-of-type(1) {
+  transform: rotate(180deg);
+  }
+/*****************LOGO et hamburger**************/ 
+.div-center {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; 
+    height: 80px;   
+  }
+.logo {
+    display: flex;
+    align-items: center;
+  }
+.logo img {
+    height: 45px;
+    transition: all 0.4s ease-in-out;
+    }
+.logo img:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }

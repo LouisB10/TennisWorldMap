@@ -95,7 +95,6 @@ $isOnPage4 =  true;
         </div>
         <div class="div-messagerie">
           <div class="boutons">
-          <button class="btn-connexion">Connexion</button>
           <?php if(!isset($_SESSION['admin'])) {
               echo '<button class="btn-connexion">Connexion</button>';
           } ?>

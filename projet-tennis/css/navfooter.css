@@ -81,132 +81,19 @@ ul {
 .deco-reverse {
   transform: rotate(180deg);
 }
-.logoo {
+.logo {
   height: 181px;
   display: flex;
   align-items: center;
 }
-.logo {
+.logo img {
   width: auto;
   height: 90%;
   transition: all 0.4s ease-in-out;
 }
-.logo:hover {
+.logo img:hover {
   cursor: pointer;
   transform: scale(1.05);
-}
-
-@media only screen and (max-width: 1600px) {
-  .nav-link {
-    font-size: 25px;
-  }
-  .logo {
-    height: 80%;
-  }
-  .menu-navigation,
-  .menu-decoration-left,
-  .menu-decoration-right,
-  .logoo,
-  .nav-links-left,
-  .nav-links-right {
-    height: 160px;
-  }
-}
-@media only screen and (max-width: 1200px) {
-  .nav-link {
-    font-size: 20px;
-  }
-  .logo {
-    height: 70%;
-  }
-  .menu-navigation,
-  .menu-decoration-left,
-  .menu-decoration-right,
-  .logoo,
-  .nav-links-left,
-  .nav-links-right {
-    height: 130px;
-  }
-}
-@media only screen and (max-width: 1000px) {
-  .nav-link {
-    font-size: 18px;
-  }
-  .logo {
-    height: 80%;
-  }
-  .menu-navigation,
-  .menu-decoration-left,
-  .menu-decoration-right,
-  .logoo,
-  .nav-links-left,
-  .nav-links-right {
-    height: 120px;
-  }
-}
-@media only screen and (max-width: 850px) {
-  .menu-navigation {
-    grid-template-columns: 1fr 0.5fr 1fr;
-  }
-  .nav-links-left {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-  }
-  .nav-links-right {
-    grid-column: 3 / 4;
-    grid-row: 1 / 2;
-  }
-  .menu-logo {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-  }
-  ul {
-    justify-content: space-evenly;
-  }
-  .menu-decoration-left,
-  .menu-decoration-right {
-    display: none;
-  }
-  .menu-navigation,
-  .logoo,
-  .nav-links-left,
-  .nav-links-right {
-    height: 100px;
-  }
-}
-
-@media only screen and (max-width: 550px) {
-  .nav-link {
-    font-size: 15px;
-  }
-  .logo {
-    height: 70%;
-  }
-}
-
-@media only screen and (max-width: 450px) {
-  .nav-link {
-    font-size: 13px;
-  }
-  .logo {
-    height: 60%;
-  }
-}
-@media only screen and (max-width: 400px) {
-  .menu-navigation {
-    grid-template-columns: 1fr 1fr;
-  }
-  .nav-links-left {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-  }
-  .nav-links-right {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-  }
-  .logo {
-    display: none;
-  }
 }
 
 /************************************FOOTER******************************/
