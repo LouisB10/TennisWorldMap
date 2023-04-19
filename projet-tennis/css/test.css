@@ -4,67 +4,56 @@
   text-decoration: none;
   list-style: none;
   font-family: "Jost", sans-serif;
-}
-body {
-  width: 100vw;
   overflow-x: hidden;
   overflow-y: scroll;
 }
-/************************************NAV-BAR******************************/
-.section-nav-bar{
-  height: 80px;
-  width: 100%;
+body {
+  width: 100vw;
 }
+/************************************NAV-BAR******************************/
+
 .nav-bar {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
-  grid-template-rows: repeat(2,1fr);
+  grid-template-columns:1fr 1fr 1fr;
+  grid-template-rows: auto;
   width: 100%;
-  height: 100%;
+  height: 90px;
   padding: 0;
   margin: 0;
   background-color: rgba(0, 0, 0, 1);
 }
-/******************Deco gauche****************/
-.decoration-left-up {
+/******************Deco gauche et droite****************/
+/******Deco gauche*********/
+.decoration-left {
   grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  height: 50%;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
-.decoration-left-bottom {
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-}
-.decoration-left-up img,.decoration-left-bottom img {
-height: 60%;
-}
-.decoration-left-up img:nth-of-type(1) {
-  transform: rotate(180deg);
-}
-/******************Deco droite**************/
-.decoration-right-up {
+/******Deco droite en haut***********/
+.decoration-right {
   grid-column: 3 / 4;
   grid-row: 1 / 2;
-  height: 50%;
+  height: 45px;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 }
-.decoration-right-bottom {
+/******Deco droite en bas***********/
+.decoration-right {
   grid-column: 3 / 4;
   grid-row: 2 / 3;
-  height: 50%;
+  height: 45px;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
 }
-.decoration-right-up img,.decoration-right-bottom img {
-height: 60%;
+/******img deco ***********/
+.decoration-left-up img,.decoration-left-bottom img, .decoration-right-up img,.decoration-right-bottom img {
+  height: 35%;
 }
-.decoration-right-up img:nth-of-type(1) {
+.decoration-left-up img:nth-of-type(1),.decoration-right-up img:nth-of-type(1) {
   transform: rotate(180deg);
 }
 
@@ -74,9 +63,9 @@ height: 60%;
   grid-row: 1 / 2;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
-  height: 50px;
+  justify-content: center;
+  height: 60px;
 }
 .logo {
   display: flex;

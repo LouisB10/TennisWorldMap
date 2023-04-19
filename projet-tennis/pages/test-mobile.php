@@ -15,20 +15,23 @@
 </head>
 <body>
 <header>
-    <section class="section-nav-bar">
    <nav class="nav-bar">
-    <div class="decoration-left-up"><img src="../image/decovert.webp"/></div>
-    <div class="decoration-left-bottom"><img src="../image/decojaune.webp"/></div>
+    <div class="decoration-left">
+        <img src="../image/decovert.webp"/>
+        <img src="../image/decojaune.webp"/>
+    </div>
     <div class="div-center">
-     <a href="../pages/index.php" class="logo"><img src="../image/logo.webp"></a>
+        <a href="../pages/index.php" class="logo"><img src="../image/logo.webp"></a>
+        <div class="hamburger-btn">
+            <button type="button" class="script-hamburger">
+                <div class="icon-hamburger"><span></span><span></span><span></span></div>
+            </button>
+        </div>
     </div>
-    <div class="hamburger-btn">
-        <button type="button" class="script-hamburger">
-            <div class="icon-hamburger"><span></span><span></span><span></span></div>
-        </button>
+    <div class="decoration-right">
+        <img src="../image/decojaune.webp"/>
+        <img src="../image/decovert.webp"/>
     </div>
-    <div class="decoration-right-up"><img src="../image/decojaune.webp"/></div>
-    <div class="decoration-right-bottom"><img src="../image/decovert.webp"/></div>
   </nav>
   <div class="hamburger-menu">
     <ul>
@@ -38,7 +41,6 @@
         <li><a href="../pages/contact.php" class="nav-link">Contact</a></li> -->
     </ul>
   </div>
-  </section>
 </header>
 <script>
     document.querySelector('.script-hamburger').addEventListener('click', function () {
