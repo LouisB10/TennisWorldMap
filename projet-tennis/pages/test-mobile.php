@@ -15,26 +15,41 @@
 </head>
 <body>
 <header>
+    <section class="section-nav-bar">
    <nav class="nav-bar">
-    <div class="decoration-left">
-        <img src="../image/decovert.webp"/>
-        <img src="../image/decojaune.webp"/>
-    </div>
+    <div class="decoration-left-up"><img src="../image/decovert.webp"/></div>
+    <div class="decoration-left-bottom"><img src="../image/decojaune.webp"/></div>
     <div class="div-center">
      <a href="../pages/index.php" class="logo"><img src="../image/logo.webp"></a>
-     
     </div>
-    <div class="hamburger"></div>
-    <div class="decoration-right">
-        <img src="../image/decojaune.webp"/>
-        <img src="../image/decovert.webp"/>
+    <div class="hamburger-btn">
+        <button type="button" class="script-hamburger">
+            <div class="icon-hamburger"><span></span><span></span><span></span></div>
+        </button>
     </div>
+    <div class="decoration-right-up"><img src="../image/decojaune.webp"/></div>
+    <div class="decoration-right-bottom"><img src="../image/decovert.webp"/></div>
   </nav>
-</header>   
+  <div class="hamburger-menu">
+    <ul>
+        <!-- <li><a href="../pages/index.php" class="nav-link ">Carte</a></li>
+        <li><a href="../pages/classement.php" class="nav-link ">Classement <br>ATP</a></li>
+        <li><a href="../pages/calendrier.php" class="nav-link ">Calendrier<br>des tournois</a></li>
+        <li><a href="../pages/contact.php" class="nav-link">Contact</a></li> -->
+    </ul>
+  </div>
+  </section>
+</header>
+<script>
+    document.querySelector('.script-hamburger').addEventListener('click', function () {
+document.querySelector('.icon-hamburger').classList.toggle('open');
+});
+</script>   
 </body>
 </html>
+
 <!-- https://mdbootstrap.com/docs/standard/extended/hamburger-menu/ -->
-    320px : pour les écrans mobiles les plus petits, tels que les anciens iPhones et Androids.
+    <!-- 320px : pour les écrans mobiles les plus petits, tels que les anciens iPhones et Androids.
     375px : pour les écrans mobiles de taille moyenne, tels que l'iPhone 6/7/8.
     414px : pour les écrans mobiles plus grands, tels que l'iPhone 6/7/8 Plus.
-    480px : pour les écrans mobiles plus grands, tels que certains téléphones Android et Windows.
+    480px : pour les écrans mobiles plus grands, tels que certains téléphones Android et Windows. -->
