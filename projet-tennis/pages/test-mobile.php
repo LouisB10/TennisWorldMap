@@ -35,10 +35,10 @@
   </nav>
   <div class="hamburger-menu">
     <ul>
-        <!-- <li><a href="../pages/index.php" class="nav-link ">Carte</a></li>
-        <li><a href="../pages/classement.php" class="nav-link ">Classement <br>ATP</a></li>
-        <li><a href="../pages/calendrier.php" class="nav-link ">Calendrier<br>des tournois</a></li>
-        <li><a href="../pages/contact.php" class="nav-link">Contact</a></li> -->
+        <li><a href="../pages/index.php" class="nav-link ">Carte</a></li>
+        <li><a href="../pages/classement.php" class="nav-link ">Classement ATP</a></li>
+        <li><a href="../pages/calendrier.php" class="nav-link ">Calendrier des tournois</a></li>
+        <li><a href="../pages/contact.php" class="nav-link">Contact</a></li>
     </ul>
   </div>
 </header>

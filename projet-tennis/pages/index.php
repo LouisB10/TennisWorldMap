@@ -29,10 +29,10 @@
    <div class="page-titre">
         <p class="titre">CARTE</p>
     </div>
-        <!-- <div class="center">
+        <div class="center">
                 <img class="ball" src="../image/balle-tennis.png">
             <div class="shadow"></div>
-        </div>     -->
+        </div>    
    </section>
    <?php include '../includes/footer.php'; ?>
 </body>
