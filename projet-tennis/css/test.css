@@ -22,40 +22,7 @@ body {
   margin: 0;
   background-color: rgba(0, 0, 0, 1);
 }
-/******************Deco gauche et droite****************/
-/******Deco gauche*********/
-.decoration-left {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-/******Deco droite***********/
-.decoration-right {
-  grid-column: 3 / 4;
-  grid-row: 1 / 2;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-/******img deco ***********/
-.decoration-left img,
-.decoration-right img {
-  height: auto;
-  width: 100%;
-}
-.decoration-right img:nth-of-type(1) {
-  transform: rotate(180deg);
-}
-.decoration-left img:nth-of-type(1){
-  transform: scaleY(-1);
-}
-.decoration-right img:nth-of-type(2){
-  transform: scaleX(-1);
-}
+
 /*****************LOGO et hamburger**************/
 .div-center {
   grid-column: 2 / 3;
@@ -135,7 +102,7 @@ body {
   padding: 0;
   background: none;
 }
-/************************menu-hamburger***********/
+/************************menu-hamburger************************/
 .hamburger-menu {
   display: none;
   width: 100%;
@@ -153,22 +120,79 @@ body {
   display: flex;
   height: 120px;
 }
+/***********Partie haute du hamburger:deco/menu/deco********/
+
+/***********partie deco left et deco right********/
 .menu-deco{
   display: flex;
   justify-content: space-between;
   width: 100%;
   height: 90px;
 }
-.menu-deco div:first-of-type,.menu-deco div:last-of-type{
-  width: 15%;
+.menu-deco-left,.menu-deco-right{
+ width: 15%;
   height: 100;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
 }
-.menu-deco div:first-of-type img,.menu-deco div:last-of-type img{
+.menu-deco-left{
+  align-items:flex-start;
+}
+.menu-deco-right{
+  align-items:flex-end;
+}
+.menu-deco-left img,.menu-deco-right img{
+  height: auto;
+}
+.menu-deco-right img{
+   transform: scaleX(-1);
+}
+/***********partie deco nav bar quand hamburger display********/
+.nav-bar-deco{
+  transform: rotate(90deg)    ;
+}
+/******************Deco gauche et droite****************/
+/******Deco gauche*********/
+.decoration-left {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+/******Deco droite***********/
+.decoration-right {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+/******img deco ***********/
+.decoration-left img,
+.decoration-right img {
+  height: auto;
   width: 100%;
 }
+.decoration-left img:nth-of-type(2){
+  
+}
+.decoration-right img:nth-of-type(1){
+  transform: rotate(180deg);
+
+}
+.decoration-left img:nth-of-type(1){
+  transform: scaleY(-1);
+}
+.decoration-right img:nth-of-type(2){
+  transform: scaleX(-1);
+}
+
+
+/***********partie menu au milieu********/
+
 .menu-deco ul {
   width: 70%;
   height: 100%;
@@ -187,7 +211,7 @@ body {
   margin: 0; 
   padding: 0; 
   }
-.menu-deco ul li a {
+.menu-deco .nav-link {
   margin: 0; 
   padding: 0; 
   width: 75%;
@@ -197,6 +221,7 @@ body {
   letter-spacing: 0.1em;
   color: white;
 }
+/********decoration en bas du menu hamburger****/
 .deco-bottom{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

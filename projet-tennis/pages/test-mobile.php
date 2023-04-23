@@ -18,8 +18,8 @@
    <nav class="nav-bar">
     <div class="decoration-left">
         <img src="../image/decovert.png"/>
-        <img src="../image/decojaune.png"/>
-        <img src="../image/decovert-top.png" alt="" class="deco-hamburger">
+        <!-- <img src="../image/decojaune.png"/> -->
+        <img src="../image/decovert-top.png" alt="" class="nav-bar-deco">
     </div>
     <div class="div-center">
         <a href="../pages/index.php" class="logo"><img src="../image/logo.webp"></a>
@@ -31,13 +31,13 @@
     </div>
     <div class="decoration-right">
         <img src="../image/decojaune.png"/>
-        <img src="../image/decovert.png"/>
-        <img src="../image/decojaune-top.png" alt="" class="deco-hamburger"> <!--106px donc environ 40px et decojaune-bottom 66Px-->
+        <!-- <img src="../image/decovert.png"/> -->
+        <img src="../image/decojaune-top.png" alt="" class="nav-bar-deco"><!-- 106px donc environ 40px et decojaune-bottom 66Px-->
     </div>
   </nav>
   <div class="hamburger-menu">
     <div class="menu-deco">
-        <div>
+        <div class="menu-deco-left">
             <img src="../image/decovert-bottom.png" alt="" class="deco-hamburger">
         </div>
         <ul>
@@ -46,7 +46,7 @@
             <li><a href="../pages/calendrier.php" class="nav-link">Calendrier des tournois</a></li>
             <li><a href="../pages/contact.php" class="nav-link">Contact</a></li>
         </ul>
-        <div>
+        <div class="menu-deco-right">
             <img src="../image/decojaune-bottom.png" alt="" class="deco-hamburger">
         </div>
     </div>
