@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,8 +18,14 @@
         <nav class="nav-bar">
             <div class="decoration-left">
                 <img src="../image/decovert.png" class="deco-fixed" style="transform: scaleY(-1);" />
-                <img src="../image/decojaune.png" class="deco-relative"/>
+                <img src="../image/decojaune.png" class="deco-relative" />
                 <img src="../image/decovert-top.png" class="deco-hamburger" id="deco-left">
+            </div>
+            <div class="links-left">
+                <ul>
+                    <li><a href="../pages/index.php">Carte</a></li>
+                    <li><a href="../pages/classement.php">Classement</br class="br-links"> ATP</a></li>
+                </ul>
             </div>
             <div class="div-center">
                 <a href="../pages/index.php" class="logo"><img src="../image/logo.webp"></a>
@@ -30,10 +35,18 @@
                     </button>
                 </div>
             </div>
+            <div class="links-right">
+                <ul>
+                    <li><a href="../pages/calendrier.php">Calendrier</br class="br-links"> tournois</a></li>
+                    <li><a href="../pages/contact.php">Contact</a></li>
+                </ul>
+            </div>
+
+
             <div class="decoration-right">
                 <img src="../image/decojaune.png" class="deco-fixed" style="transform: rotate(180deg);" />
-                <img src="../image/decovert.png" class="deco-relative" style="transform: scaleX(-1);"/>
-                <img src="../image/decojaune-top.png"  class="deco-hamburger" id="deco-right">
+                <img src="../image/decovert.png" class="deco-relative" style="transform: scaleX(-1);" />
+                <img src="../image/decojaune-top.png" class="deco-hamburger" id="deco-right">
             </div>
         </nav>
         <div class="hamburger-menu">
@@ -42,16 +55,15 @@
                     <img src="../image/decovert-bottom.png" alt="decoration à gauche du menu">
                 </div>
                 <ul>
-                    <li><a href="../pages/index.php">Carte</a></li>
-                    <li><a href="../pages/classement.php">Classement ATP</a></li>
-                    <li><a href="../pages/calendrier.php">Calendrier des tournois</a></li>
-                    <li><a href="../pages/contact.php">Contact</a></li>
+                    <li><img src="../image/icon-carte.png" alt=""><a href="../pages/index.php">Carte</a></li>
+                    <li><img src="../image/icon-classement.png" alt=""><a href="../pages/classement.php">Classement ATP</a></li>
+                    <li><img src="../image/icon-calendrier2.png" alt=""><a href="../pages/calendrier.php">Calendrier tournois</a></li>
+                    <li><img src="../image/icon-contact.png" alt=""><a href="../pages/contact.php">Contact</a></li>
                 </ul>
                 <div class="top-deco-right">
-                    <img src="../image/decojaune-bottom.png" alt="decoration à droite du menu" >
+                    <img src="../image/decojaune-bottom.png" alt="decoration à droite du menu">
                 </div>
             </div>
-
             <div class="menu-deco-bottom">
                 <img src="../image/decojaune.png" alt="decoration en bas du menu">
                 <img src="../image/decovert.png" alt="decoration en bas du menu">
