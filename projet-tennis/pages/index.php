@@ -12,7 +12,7 @@
     <title>TennisWorldMap - Carte</title>
     <link rel="icon" type="image/x-icon" href="../image/logo-remove.webp">
     <link rel="stylesheet" href="../css/style.css?v=<?=date("H:i:s")?>">
-    <link rel="stylesheet" href="../css/navfooter.css?v=<?=date("H:i:s")?>">
+    <link rel="stylesheet" href="../css/test.css?v=<?=date("H:i:s")?>">
     <link rel="stylesheet" href="../css/animation.css?v=<?=date("H:i:s")?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +25,7 @@
    $isOnPage3 = false;
    $isOnPage4 = false;  
    include '../includes/header.php'; ?>
-   <section>
+   <!-- <section>
    <div class="page-titre">
         <p class="titre">CARTE</p>
     </div>
@@ -33,8 +33,9 @@
                 <img class="ball" src="../image/balle-tennis.png">
             <div class="shadow"></div>
         </div>    
-   </section>
-   <?php include '../includes/footer.php'; ?>
+   </section> -->
+   <?php  include '../includes/footer.php'; ?>
 </body>
 
 </html>
+

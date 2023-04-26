@@ -12,7 +12,6 @@ blanc #fff8f1 */
 body {
   width: 100vw;
   overflow-x: hidden;
-  overflow-y: scroll;
 }
 /************titre des pages************/
 .page-titre {

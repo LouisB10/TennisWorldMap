@@ -15,6 +15,7 @@
     <title>TennisWorldMap - Messagerie</title>
     <link rel="icon" type="image/x-icon" href="../image/logo-remove.webp">
     <link rel="stylesheet" href=../css/style.css?v=<?=date("H:i:s")?>">
+    <link rel="stylesheet" href="../css/test.css?v=<?=date("H:i:s")?>">
     <link rel="stylesheet" href="../css/navfooter.css?v=<?=date("H:i:s")?>">
     <link rel="stylesheet" href="../css/message.css?v=<?=date("H:i:s")?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">

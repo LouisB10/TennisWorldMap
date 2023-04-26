@@ -1,5 +1,4 @@
 <?php
-
     include("../admin/connect.php");
     // Comme dans la page d'index, sauf qu'ici c'est forcé
     session_destroy();

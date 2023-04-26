@@ -11,7 +11,7 @@
     <title>TennisWorldMap - Contact</title>
     <link rel="icon" type="image/x-icon" href="../image/logo-remove.webp">
     <link rel="stylesheet" href="../css/style.css?v=<?=date("H:i:s")?>">
-    <link rel="stylesheet" href="../css/navfooter.css?v=<?=date("H:i:s")?>">
+    <link rel="stylesheet" href="../css/test.css?v=<?=date("H:i:s")?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,700;1,900&display=swap" rel="stylesheet">
