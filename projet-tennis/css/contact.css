@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Jost", sans-serif;
+}
+body {
+  width: 100vw; /***width 320px****/
+  overflow-x: hidden;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/****titre de la page div****/
+.titre-page {
+  width: auto;
+  height: auto;
+  text-align: center;
+  background: #306936;
+  padding: 1% 7.5%;
+  border-radius: 2.5vw;
+  margin: 15px 0 15px;
+  outline: 3px solid black;
+}
+/****titre de la page texte****/
+.titre-page p {
+  color: #ffffff;
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  font-size: 1em;
+}
+
+
+/*****div contact***/
+.contact-main {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 0.5fr 0.5fr;
+}
+
+/*****div formulaire****/
+.contact-form {
+  grid-column: 1 /2;
+  grid-row: 1 /2;
+  width: 90%;
+  background-color: #d9d9d9;
+  border-radius: 2.5vw;
+  border: none;
+  margin: 0 5%;
+}
+/****formulaire****/
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-form form input{
+ 
+}
+
+.contact-form form label{
+ 
+}
+
+.contact-form form span{
+ 
+}
+
+
+
+
+/****************************************MEDIA QUERIES RESPONSIVE NAVBAR**************************************/
+/********Passage tablette / telephone en portrait*******/
+
+@media (min-width: 480px) {
+  .titre-page {
+    margin: 25px 0 25px;
+    outline: 3.5px solid black;
+  }
+  .titre-page p {
+    font-size: 1.5em;
+  }
+}
+
+/************AFFICHAGE Tablette****************/
+@media (min-width: 767px) {
+  .titre-page {
+    margin: 35px 0 35px;
+    outline: 4px solid black;
+  }
+  .titre-page p {
+    font-size: 2em;
+  }
+}
+
+/*********AFFICHAGE Tablette/ PC Portable*******/
+@media (min-width: 991px) {
+  .titre-page {
+    margin: 50px 0 50px;
+    outline: 4.5px solid black;
+  }
+  .titre-page p {
+    font-size: 2.5em;
+  }
+}
+
+/************AFFICHAGE PC Portable/PC petit***********/
+@media (min-width: 1200px) {
+  .titre-page {
+    margin: 75px 0 75px;
+    outline: 5px solid black;
+  }
+  .titre-page p {
+    font-size: 3em;
+  }
+}
+
+/************AFFICHAGE PC moyen***********/
+@media (min-width: 1400px) {
+  .titre-page {
+    margin: 100px 0 100px;
+    outline: 5.5px SOLID black;
+  }
+  .titre-page p {
+    font-size: 4em;
+  }
+}
+
+/************AFFICHAGE PC grand***********/
+@media (min-width: 1600px) {
+  .titre-page {
+    margin: 100px 0 100px;
+    outline: 6px solid black;
+  }
+}
