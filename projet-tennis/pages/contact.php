@@ -29,7 +29,7 @@
         </div>
         <div class="trois-div">
           <div class="div-carte">
-            <div id="map"></div>
+            <div id="map"> <img src="../image/carte-emplacement.PNG" alt=""></div>
             <p>Montpellier</p>
             <p>4657 Rue de la Jeune Parque</p>
             <input type="button" value="Emplacement" 
@@ -38,7 +38,7 @@
           <div class="div-formulaire">
             <form action="../pages/contact.php" method="POST">
               <label for="nom">Nom</label>
-              <input id="nom" type="text" name="nom"  maxlength="30" aria-label="Nom" aria-describedby="nom-description" pattern="^[a-zA-ZÀ-ÿ]+([\-'\s][a-zA-ZÀ-ÿ]+)*$">
+              <input id="nom" type="text" name="nom"  maxlength="30" aria-label="Nom" aria-describedby="nom-description" pattern="^[a-zA-ZÀ-ÿ]+([\-'\s][a-zA-ZÀ-ÿ]+)*$" >
               <label for="prenom">Prénom</label>
               <input id="prenom" type="text" name="prenom" maxlength="30" aria-label="Prénom" aria-describedby="prénom-description" pattern="^[a-zA-ZÀ-ÿ]+([\-'\s][a-zA-ZÀ-ÿ]+)*$">
               <label for="email">Adresse e-mail<span>*</span></label>
