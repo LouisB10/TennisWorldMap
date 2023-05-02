@@ -62,10 +62,9 @@ CREATE TABLE IF NOT EXISTS `messages` (
 --
 
 INSERT INTO `messages` (`id`, `nom`, `prenom`, `email`, `message`, `date_envoi`, `type_message`) VALUES
-(11, 'zdzd', 'azefdadz', 'exzelfkz@mefoz.fr', 'azdadzadadaaeaeaezeaeaeaz', '2023-04-17 19:58:35', 2),
-(8, 'exemple', 'exemple', 'adresse@exemple.fr', 'azdazddzaeae', '2023-04-12 14:18:35', 3),
-(9, 'exemple', 'exemlpe', 'edxmele@mail.com', 'message supprimé', '2023-04-12 15:34:45', 3),
-(1, 'Dupont', 'Jean', 'jean.dupont@email.com', 'Bonjour, je voulais savoir si vous aviez des offres promotionnelles en cours ?', '2023-04-12 15:15:40', 3);
+(1, 'exemple', 'exemple', 'exemple@courrier.fr', 'message exemple', '2023-04-17 19:58:35', 1),
+(2, 'exemple', 'exemple', 'adresse@exemple.fr', 'message archivé', '2023-04-12 14:18:35', 2),
+(3 'exemple', 'exemlpe', 'exemple@mail.com', 'message supprimé', '2023-04-12 15:34:45', 3),
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
