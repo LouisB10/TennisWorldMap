@@ -1,72 +1,37 @@
--- phpMyAdmin SQL Dump
--- version 5.2.0
--- https://www.phpmyadmin.net/
---
--- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 27 avr. 2023 à 12:31
--- Version du serveur : 8.0.31
--- Version de PHP : 8.0.26
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
---
--- Base de données : `tennisworldmap`
---
 
--- --------------------------------------------------------
+CREATE TABLE admin_profile(
+        id             Int  Auto_increment  NOT NULL ,
+        admin_login    Varchar (10) NOT NULL ,
+        admin_password Varchar (60) NOT NULL
+	,CONSTRAINT admin_profile_PK PRIMARY KEY (id)
+)ENGINE=InnoDB;
 
---
--- Structure de la table `admin_profile`
---
 
-DROP TABLE IF EXISTS `admin_profile`;
-CREATE TABLE IF NOT EXISTS `admin_profile` (
-  `admin_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `admin_password` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Déchargement des données de la table `admin_profile`
---
 INSERT INTO `admin_profile` (`admin_id`, `admin_password`) VALUES
-('louisb10', 'tennis10');
+('louisb10', 'b6Ve4bC4U39Zaf4FZL6i5pVYhwjD7r4Gkhn734mPNrHfY4i66YbWD8bQ532C');
 
--- --------------------------------------------------------
 
---
--- Structure de la table `messages`
---
 
-DROP TABLE IF EXISTS `messages`;
-CREATE TABLE IF NOT EXISTS `messages` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `nom` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `prenom` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `message` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `date_envoi` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `type_message` int NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE messages(
+        id               Int  Auto_increment  NOT NULL ,
+        admin_id         Int NOT NULL ,
+        nom              Varchar (50) NOT NULL ,
+        prenom           Varchar (50) NOT NULL ,
+        email            Varchar (100) NOT NULL ,
+        message          Varchar (500) NOT NULL ,
+        date_envoi       TimeStamp NOT NULL ,
+        type_message     Int NOT NULL ,
+        id_admin_profile Int
+	,CONSTRAINT messages_PK PRIMARY KEY (id)
 
---
--- Déchargement des données de la table `messages`
---
+	,CONSTRAINT messages_admin_profile_FK FOREIGN KEY (id_admin_profile) REFERENCES admin_profile(id)
+)ENGINE=InnoDB;
 
 INSERT INTO `messages` (`id`, `nom`, `prenom`, `email`, `message`, `date_envoi`, `type_message`) VALUES
 (1, 'exemple', 'exemple', 'exemple@courrier.fr', 'message exemple', '2023-04-17 19:58:35', 1),
 (2, 'exemple', 'exemple', 'adresse@exemple.fr', 'message archivé', '2023-04-12 14:18:35', 2),
 (3 'exemple', 'exemlpe', 'exemple@mail.com', 'message supprimé', '2023-04-12 15:34:45', 3),
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

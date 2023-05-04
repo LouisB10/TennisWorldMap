@@ -449,7 +449,7 @@
 }
 
 /****************************************FOOTER**************************************/
-.footer {
+footer {
   display: grid;
   grid-template-columns: 1fr 0.5fr 1fr;
   grid-template-rows: 1fr;
@@ -459,7 +459,6 @@
   margin: 0;
   background-color: rgba(0, 0, 0, 1);
 }
-
 /**************Partie à gauche logo + cp********************/
 .footer-left {
   height: 80px;
@@ -470,7 +469,6 @@
   align-items: center;
   margin-left: 4%;
 }
-
 /*************div gauche logo*********/
 .footer-left-logo {
   height: auto;
@@ -479,18 +477,15 @@
   align-items: center;
   justify-content: center;
 }
-
 /********logo********/
 .footer-left-logo img {
   height: 45px;
   width: auto;
   transition: all 0.4s ease-in-out;
 }
-
 .footer-left-logo img:hover {
   transform: scale(1.05);
 }
-
 /*************div gauche copyright*********/
 .footer-left-copyright {
   height: auto;
@@ -539,12 +534,10 @@
   width: auto;
   transition: all 0.2s ease-in;
 }
-
 .footer-center img:hover {
   transform: scale(1.05);
   cursor: pointer;
 }
-
 /***************Footer droite user + messagerie*************/
 .footer-right {
   height: 80px;
@@ -606,7 +599,7 @@
 
 @media (min-width: 480px) {
   /*****hauteur du footer*****/
-  .footer,
+  footer,
   .footer-left,
   .footer-center,
   .footer-right {
@@ -642,7 +635,7 @@
 /************AFFICHAGE Tablette****************/
 @media (min-width: 767px) {
   /*****hauteur du footer*****/
-  .footer,
+  footer,
   .footer-left,
   .footer-center,
   .footer-right {
@@ -678,7 +671,7 @@
 /*********AFFICHAGE Tablette/ PC Portable*******/
 @media (min-width: 991px) {
   /*****hauteur du footer*****/
-  .footer,
+  footer,
   .footer-left,
   .footer-center,
   .footer-right {
@@ -714,7 +707,7 @@
 /************AFFICHAGE PC Portable/PC petit***********/
 @media (min-width: 1200px) {
   /*****hauteur du footer*****/
-  .footer,
+  footer,
   .footer-left,
   .footer-center,
   .footer-right {

@@ -20,18 +20,12 @@ include('../admin/connect.php');
 </head>
 
 <body>
-    <?php
-
-    $isOnPage1 = false;
-    $isOnPage2 = false;
-    $isOnPage3 = false;
-    $isOnPage4 = true;
-    include '../includes/header.php'; ?>
+    <?php $isOnPage1 = false; $isOnPage2 = false; $isOnPage3 = false; $isOnPage4 = true; include '../includes/header.php'; ?>
     <section>
-        <div class="titre-page">
+        <div class="title">
             <p>CONTACTEZ NOUS</p>
         </div>
-        <div class="contact-main">
+        <!-- <div class="contact-main">
             <div class="contact-form">
                 <form action="../pages/contact.php" method="POST">
                     <label for="nom">Nom</label>
@@ -56,16 +50,8 @@ include('../admin/connect.php');
             <div class="contact-info">
 
             </div>
-        </div>
-
-
-
-
+        </div> -->
     </section>
-
-
-
-
     <?php include '../includes/footer.php'; ?>
 </body>
 

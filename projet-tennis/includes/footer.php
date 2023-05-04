@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer>
   <div class="footer-left">
     <div class="footer-left-logo">
       <img src="../image/logo.webp" alt="logo tennisworldmap footer">
