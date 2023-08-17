@@ -14,15 +14,14 @@ function fetchATPRank(url) {
       data.rankings.forEach((rankings, i) => {
         // parcourt chaque élément de la propriété rankings
         if(i >= debCount && i < finCount) {
-          let playerId = rankings.team.id;
           /*appel fonctions création tableau en html/css*/
           createRowRank(); //fonction créer tableau
-          fillRowRank(
-            //fonction remplir les cases
+          fillRowRank( //fonction remplir les cases
+            //nom des catégories(variable déclarée plus bas)
             textrang,
             textpays,
             textjoueur,
-            textpoint, //nom des catégories(variable déclarée plus bas)
+            textpoint, 
             rankings.ranking, //chemin du classement dans le tableau des donnees de l'api
             rankings.team.country.name, //chemin du nom du pays
             rankings.rowName, //chemin du Nom du joueur
@@ -33,6 +32,7 @@ function fetchATPRank(url) {
       });
     });
 }
+
 
 nextbtn = document.querySelector(".nextPlayer");
 nextbtn.addEventListener("click", function() {
@@ -72,7 +72,7 @@ function createRowRank(typeClassement) {
     newThPointsP = document.createElement("p");
 
     newThEarnings = document.createElement("th");
-    newThEarningsP = document.createElement("p");newThEarnings
+    newThEarningsP = document.createElement("p");
 
     newThHeight = document.createElement("th");
     newThHeightP = document.createElement("p");
@@ -173,8 +173,6 @@ var texttaille = "Taille";
 var textpoids = "Poids";
 var textstyle = "Style";
 
-
-
 /**********************************fonction remplir les cases******************* */
 let fillRowRankIni = false;
 function fillRowRank(
@@ -229,7 +227,7 @@ function appendRowRank() {
 }
 
 
-/**********************************On récupère tout les boutons catégories******************* */
+/*******On récupère tout les boutons catégories******* */
 let BtnRang = document.querySelector("#rang");
 let BtnPays = document.querySelector("#pays");
 let BtnJoueur = document.querySelector("#joueur");
@@ -247,6 +245,8 @@ let btnstatusRang = true;
 let btnstatusPays = true;
 let btnstatusJoueur = true;
 let btnstatusPoints = true;
+
+
 
 BtnReset.addEventListener("click", function (){  
   let dataTH= document.querySelectorAll("th");
@@ -292,6 +292,7 @@ BtnRang.addEventListener("click", function () {
     btnstatusRang = false;
   }
 });
+
 
 
 BtnPays.addEventListener("click", function () {

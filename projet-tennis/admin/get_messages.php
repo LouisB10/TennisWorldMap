@@ -25,7 +25,6 @@ if (isset($_GET['id']) && is_numeric($_GET['id']) && isset($_GET['action'])) {
   }
 }
 
-
 // rajouter htmlspecialchars($input) //
 // Récupération des messages selon leur type depuis la base de données
 if (isset($_GET['type_message']) && ($_GET['type_message'] == 1 || $_GET['type_message'] == 2 || $_GET['type_message'] == 3)) {

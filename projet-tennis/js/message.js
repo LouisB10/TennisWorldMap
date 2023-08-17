@@ -21,7 +21,7 @@ boites.forEach((boite) => {
 afficherMessages(1);
 
 function afficherMessages(type_message) {
-  document.querySelector(".message-div").setAttribute('data-id', type_message); 
+  document.querySelector(".message-div").setAttribute("data-id", type_message);
 
   const messagesContainer = document.querySelector(".message-div");
 
@@ -60,7 +60,11 @@ function afficherMessages(type_message) {
                   <img src="../image/icon-archive.png" alt="">
                 </div>
                 <div class="choix-texte">
-                  <p id="archiver" onclick="archiverOuSupprimerMessage(${message.id}, 'archiver'); afficherMessages(${document.querySelector(".message-div").getAttribute("data-id")});">ARCHIVER</p>
+                  <p id="archiver" onclick="archiverOuSupprimerMessage(${
+                    message.id
+                  }, 'archiver'); afficherMessages(${document
+          .querySelector(".message-div")
+          .getAttribute("data-id")});">ARCHIVER</p>
                 </div>
               </div>
               <div class="choix-div">
@@ -68,7 +72,9 @@ function afficherMessages(type_message) {
                   <img src="../image/icon-repondre.png" alt="">
                 </div>
                 <div class="choix-texte">
-                  <p id="repondre" onclick="repondreMessage(${message.id}, 'repondre');">REPONDRE</p>
+                  <p id="repondre" onclick="repondreMessage(${
+                    message.id
+                  }, 'repondre');">REPONDRE</p>
                 </div>
               </div>  
               <div class="choix-div">
@@ -76,7 +82,11 @@ function afficherMessages(type_message) {
                   <img src="../image/icon-supprimer.png" alt="">
                 </div>
                 <div class="choix-texte">
-                  <p id="supprimer" onclick="archiverOuSupprimerMessage(${message.id}, 'supprimer'); afficherMessages(${document.querySelector(".message-div").getAttribute("data-id")});">SUPPRIMER</p>
+                  <p id="supprimer" onclick="archiverOuSupprimerMessage(${
+                    message.id
+                  }, 'supprimer'); afficherMessages(${document
+          .querySelector(".message-div")
+          .getAttribute("data-id")});">SUPPRIMER</p>
                 </div>
               </div>
             </div>

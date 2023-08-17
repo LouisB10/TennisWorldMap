@@ -1,7 +1,3 @@
-
-
-
-
 CREATE TABLE admin_profile(
         id             Int  Auto_increment  NOT NULL ,
         admin_login    Varchar (10) NOT NULL ,
@@ -12,7 +8,6 @@ CREATE TABLE admin_profile(
 
 INSERT INTO `admin_profile` (`admin_id`, `admin_password`) VALUES
 ('louisb10', 'b6Ve4bC4U39Zaf4FZL6i5pVYhwjD7r4Gkhn734mPNrHfY4i66YbWD8bQ532C');
-
 
 
 CREATE TABLE messages(
